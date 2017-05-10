@@ -7,8 +7,6 @@
 @font-face { font-family: OpenSans_Semibold; src: url(../fonts/OpenSans_Semibold.ttf); }
 /* Fonts */
 
-.half_container_one { width: 48% !important; float: left !important; }
-.half_container_two { width: 48% !important; float: right !important; }
 .cell { width: 100% !important; background-color: #254356; padding: 1px 30px !important; border-radius: 8px; box-sizing: border-box !important; margin-bottom: 10px !important; position: relative; min-height: 78px; box-sizing: border-box; }
 .button_stroke { width: auto !important; background-color: none; border: 3px solid #FFF !important; padding: 0px 30px !important; border-radius: 8px; box-sizing: border-box !important; margin-bottom: 10px !important; position: relative; display: inline-block !important; cursor: pointer; }
 .button_stroke p { margin: 15px 0px !important; }
@@ -23,16 +21,17 @@ ol, dl, ul { margin: 0 0 0 12px !important; }
 ul li ul li { font-size: 24px !important; opacity: 0.7; }
 .sub_sub_point { font-size: 24px !important; opacity: 0.7; }
 
-.third_container_one { width: 30%; float: left; }		
-.third_container_two { width: 30%; margin: 0px 5% !important; float: left; }		
-.third_container_three { width: 30%; float: left; }
-
 .controls .navigate-right.enabled { border-left-color: #FFF !important; }
 .reveal .controls .navigate-left, .reveal .controls .navigate-left.enabled { border-right-color: #FFF !important; }
 .reveal .controls .navigate-down, .reveal .controls .navigate-down.enabled { border-top-color: #FFF !important; }
 .reveal .controls .navigate-up, .reveal .controls .navigate-up.enabled { border-bottom-color: #FFF !important; }
 .reveal .slides { width: 80% !important; }
-img { border: none !important; box-shadow: none !important; }
+img { 
+  border: none !important; 
+  box-shadow: none !important;
+  background: rgba(0,0,0,0) !important; 
+}
+
 .slide_icon { width: 45px; height: 45px; display: inline-block; vertical-align: middle !important; border: none !important; margin-right: 20px !important; margin-top: 6px !important; box-shadow: none !important; }
 
 .green_bg { text-align: left !important; }
@@ -71,45 +70,98 @@ p { font-family: OpenSans_Light !important; font-size: 28px !important; font-wei
 li { font-family: OpenSans_Light !important; font-size: 28px !important; font-weight: 100 !important; }
 
 .reveal pre { 
-  background-color: rgba(255, 251, 255, 0.9); 
-  color: darkblue; 
-  padding: 20px; 
-  border: 1px solid rgba(255,255,255, 0.1); 
-  border-radius: 8px; 
+  display: inline-block;
+  background-color: white;
+  color: black; 
+  padding: 10px; 
+  border: 1px solid lightgray; 
+  /*border-radius: 8px; */
   font-family: monospace; 
   white-space: pre; 
   font-weight: 300; 
   font-size: 0.4em; 
+  width: initial;
 }
 
 pre.large { font-size: 0.6em !important; }
 
 .reveal code {
     font-family: monospace;
-    color: darkred;
-    border-style: solid;
-    border-color: darkgray;
-    border-width: 1px;
-    background-color: #FFFBFF;
-    padding: 2px;
-    white-space: pre; 
+    font-size: 26pt;
+    color: sandybrown;
 }
 
 .reveal code.smaller {
-  font-size: 0.8em;
+  font-size: 20pt;
 }
 
 .reveal .topcorner{
    position:absolute;
    top:0;
    right:0;
+   z-index:-1;
   }
 
 .reveal .topcorner img {
    background: rgba(255, 255, 255, 0);
-   width: 100%
 }
 
-.reveal .transparent {
-  background: rgba(255, 255, 255, 0);
+span.keyword {
+   color: #FFFF00;
+   font-weight: bold !important;
+}
+
+/* 
+  column layout (naming similar to Bootstrap) 
+  make sure you wrap the cells with e.g. a 
+  <div class="row">
+    <div class="col-6">...
+    ...
+  </div>
+*/
+.row {
+  min-height: 1px; /* Required for IE7 */
+}
+
+.row:after {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  content: ".";
+  font-size: 0;
+}
+
+.col-1 {
+  width: 8.333%;
+  float: left;
+}
+.col-2 {
+  width: 16.667%;
+  float: left;
+}
+.col-3 {
+  width: 25%;
+  float: left;
+}
+.col-4 {
+  width: 33.333%;
+  float: left;
+}
+.col-6 {
+  width:50%;
+  float: left;
+}
+.col-8 {
+  width:66.667%;
+  float: left;
+}
+.col-9 {
+  width:75%;
+  float: left;
+}
+.col-12 {
+  width:100%;
+  float: left;
 }

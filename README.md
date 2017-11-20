@@ -2,13 +2,6 @@
 # Overview
 This container is supposed to be used when developing an offical Docker training module. It can be used to test slides of a single training module that is under development without having to always restart the `docker-present` container.
 
-# Building the container
-Clone this GitHub repository into a folder on your computer. In a terminal navigate to the folder and execute
-
-```
-docker build -t training/slides-tester .
-```
-
 # Usage
 1. Check out [https://github.com/docker-training/presentations](https://github.com/docker-training/presentations)
 2. Navigate to the root folder of the above repository
@@ -23,3 +16,10 @@ docker build -t training/slides-tester .
 4. In your browser navigate to `localhost:<port>`
 
 **Note:** After an edit of the slides you need to hard refresh your browser (Mac: `SHIFT-COMMAND-R`; Windows: `SHIFT-CTRL-R`)
+
+# Building the container
+Clone this GitHub repository into a folder on your computer. In a terminal navigate to the folder and execute
+
+```
+docker build -t training/slides-tester .
+```

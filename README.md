@@ -10,16 +10,16 @@ docker build -t training/slides-tester .
 ```
 
 # Usage
-To use it open a terminal window and navigate into the folder that contains your module. Then execute the following command
+1. Check out [https://github.com/docker-training/presentations](https://github.com/docker-training/presentations)
+2. Navigate to the root folder of the above repository
+3. Execute the script `slides-tester.sh` as follows:
 
-```
-docker container run --rm -it \
-    -v `pwd`/slides.html:/app/slides.html \
-    -v `pwd`/images:/app/images \
-    -p 8080:8080 \
-    training/slides-tester
-```
+    ```
+    $ ./slides-tester.sh <relative path to module> <port>
+    ```
 
-Open a browser at `http://localhost:8080/index.html`
+   where `<relative path to module>` is the relative path to the module whose slides you want to live edit and `<port>` is the public port to which the slides are mapped (if omitted it is `8080`)
 
-**Note:** If you update the slides you might need to force refresh the browser (<SHIFT>-click on the refresh button of the browser) to see the changes.
+4. In your browser navigate to `localhost:<port>`
+
+**Note:** After an edit of the slides you need to hard refresh your browser (Mac: `SHIFT-COMMAND-R`; Windows: `SHIFT-CTRL-R`)
